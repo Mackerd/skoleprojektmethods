@@ -1,4 +1,4 @@
-.index-page {
+body {
     background-image: url(../images/stock-photo-high-resolution-heart-background-px-28600312.jpg);
 }
 
@@ -57,9 +57,114 @@ button {
 
 
 
-
 /*Færdig  med nav*/
 
+/* kode for ideliste dims*/
+.roulette-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin: 2em auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.roulette-wrapper {
+    overflow: hidden;
+    flex: 1;
+    border-radius: 15px;
+}
+
+.roulette-row {
+    display: flex;
+    gap: 1em;
+    transition: transform 0.3s ease;
+}
+
+.roulette-item {
+    flex: 0 0 calc(100% - 1em);
+    background-color: rgba(255, 120, 143, 0.8);
+    border-radius: 15px;
+    padding: 1em;
+    text-align: center;
+    min-width: 200px;
+}
+
+.roulette-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+}
+
+.roulette-item h3 {
+    margin: 0.5em 0;
+    color: rgb(100, 29, 94);
+}
+
+.roulette-item p {
+    margin: 0.5em 0 0 0;
+    font-size: 0.9em;
+}
+
+.roulette-btn {
+    background-color: rgb(196, 98, 98);
+    color: white;
+    border: none;
+    padding: 1em;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    outline: 2px solid white;
+}
+
+.roulette-btn:hover {
+    background-color: rgba(235, 92, 116, 0.8);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .roulette-item {
+        flex: 0 0 calc(100% - 1em);
+        min-width: 150px;
+    }
+
+    .roulette-item img {
+        height: 200px;
+    }
+
+    .roulette-btn {
+        padding: 0.7em;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 500px) {
+    .roulette-container {
+        width: 95%;
+        gap: 0.5em;
+    }
+
+    .roulette-item {
+        min-width: 120px;
+    }
+
+    .roulette-item img {
+        height: 150px;
+    }
+
+    .roulette-item h3 {
+        font-size: 0.9em;
+    }
+
+    .roulette-btn {
+        padding: 0.5em;
+        font-size: 1em;
+    }
+}
+/*Færdig med ideliste dims*/
 /* kode for galleri */
 .gallery {
     display: flex;

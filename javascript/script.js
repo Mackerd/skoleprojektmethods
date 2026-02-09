@@ -57,3 +57,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+
+//Script til row med billederne i ideliste.html
+
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            const row = document.getElementById('rouletteRow');
+
+            row.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - row.offsetLeft;
+                scrollLeft = row.parentElement.scrollLeft;
+            });
+
+            row.addEventListener('mouseleave', () => isDown = false);
+            row.addEventListener('mouseup', () => isDown = false);
+
+            row.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - row.offsetLeft;
+                const scroll = (x - startX) * -1;
+                row.parentElement.scrollLeft = scrollLeft + scroll;
+            });
+
+function scrollRoulette(direction) {
+    const itemWidth = row.querySelector('.roulette-item').offsetWidth + 16; // item width + gap
+    row.parentElement.scrollBy({
+        left: direction * itemWidth,
+        behavior: 'smooth'
+    });
+}
+
+// Touch support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+row.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+row.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > swipeThreshold) {
+        scrollRoulette(diff > 0 ? 1 : -1);
+    }
+}
