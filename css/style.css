@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Rockybilly";
+    src: url("../fonts/Rockybilly.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     background-image: url(../images/stock-photo-high-resolution-heart-background-px-28600312.jpg);
 }
@@ -91,12 +99,43 @@ button {
     min-width: 200px;
 }
 
+
+
+
 .roulette-item img {
     width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 0.5em;
+}
+.roulette-item img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.roulette-item {
+    text-align: center;   
+}
+
+.klikher {
+    display: inline-block;   
+    background-color: rgb(255, 221, 221);
+    padding: 0.5em 1em;
+    border-radius: 15px;
+    color: rgb(100, 29, 94);
+    font-weight: bold;
+    width: 20%;
+    margin-top: 1em;
+    cursor: pointer;
+    text-align: center;
+}
+
+.klikher:hover {
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: 0.3s;
+    font-size: 1.05em;
 }
 
 .roulette-item h3 {
@@ -239,13 +278,14 @@ section {
 
 h1 {
     color: rgb(255, 255, 255);
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 0.5em;
-    padding: 0.3em;
+    padding: 0.4em;
     background-color:rgb(136, 14, 79);
-    border-radius: 120px;
+    border-radius: 25px;
     width: fit-content;
     margin: auto;
+    font-family: "Rockybilly", sans-serif;
 }
 
 
@@ -341,4 +381,8 @@ padding: 0em 1em 1em 0;
         margin: auto;
 padding: 2em;
     }
+}
+
+.description{
+    margin-right: 15%;
 }
